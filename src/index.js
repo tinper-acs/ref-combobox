@@ -25,6 +25,7 @@ const propTypes = {
   canInputGoOn: PropTypes.func,
   onSave: PropTypes.func,
   comboboxStoreData:PropTypes.array,
+  storeData:PropTypes.array,
   onChangeFormControl: PropTypes.func,
   onFocusFormControl: PropTypes.func,
 };
@@ -40,6 +41,7 @@ const defaultProps = {
   canInputGoOn: () => { return true; },
   onSave: () => { },
   comboboxStoreData:[],
+  storeData:[],
   onChangeFormControl:()=>{},
   onFocusFormControl:()=>{}
 };
@@ -66,7 +68,8 @@ class RefComboBoxBaseUI extends Component {
 
   }
   componentDidMount() {
-    let { value } = this.props;
+    let { value,storeData } = this.props;
+    this.afterLoad(this.fixDataToMap(storeData))
     if (value) {
       let refValue = refValParse(value);
       this.setState({
@@ -77,8 +80,9 @@ class RefComboBoxBaseUI extends Component {
     }
   }
   componentWillReceiveProps(nextProps){
-    if(!is(nextProps.comboboxStoreData,this.props.comboboxStoreData)){
-      this.afterLoad(this.fixDataToMap(nextProps.comboboxStoreData))
+    if(!is(nextProps.storeData,this.props.storeData)){
+      let data = this.fixDataToMap(nextProps.storeData)
+      this.afterLoad(data)
     }
   }
   matchValues = (props) => {

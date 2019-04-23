@@ -117,7 +117,7 @@ class Demo1 extends Component {
         return (
             <div className="demoPadding">
                 <RefComboBox
-                    displayField={(record)=>{return `${record.refname}`}}
+                    displayField={(record)=>{return `${record.refname}-haha`}}
                     valueField={'refcode'}
                     lang={'zh_TW'}
                     {...getFieldProps('combobox', {
@@ -128,6 +128,7 @@ class Demo1 extends Component {
                         }]
                     })}
                     comboboxStoreData={comboboxStoreData}
+                    storeData={storeData}
                     loading={loading}
                     onClickItemInner={this.onClickItem}
                     onFocusFormControl={this.onFocusFormControl}
