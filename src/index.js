@@ -231,6 +231,7 @@ class RefComboBoxBaseUI extends Component {
         value: '',
         filterUrl: false,
       });
+      this.props.onClickItemInner({});
     } else {
       this.setState({
         popupVisible: !this.state.popupVisible,
