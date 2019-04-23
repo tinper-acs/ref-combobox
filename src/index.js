@@ -341,5 +341,6 @@ RefComboBoxBaseUI.defaultProps = defaultProps;
 export default RefComboBoxBaseUI;
 export {
   ComboStore,
-  ComboItem
+  ComboItem,
+  SliderPanel
 }
