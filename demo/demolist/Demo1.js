@@ -15,7 +15,7 @@
 import React, { Component } from 'react';
 
 import Form from "bee-form";
-import RefComboBox, { ComboStore,ComboItem } from '../../src';
+import RefComboBoxBaseUI, { ComboStore,ComboItem } from '../../src';
 import '../../src/index.less';
 import Button from 'bee-button';
 import 'bee-button/build/Button.css';
@@ -116,7 +116,7 @@ class Demo1 extends Component {
         let {comboboxStoreData,loading,currentIndex} = this.state;
         return (
             <div className="demoPadding">
-                <RefComboBox
+                <RefComboBoxBaseUI
                     displayField={(record)=>{return `${record.refname}-haha`}}
                     valueField={'refcode'}
                     lang={'zh_TW'}
@@ -144,7 +144,7 @@ class Demo1 extends Component {
                             return <div > <Icon type="uf-personin-o" style={{ color: 'red' }} /> {record.refname}-{record.refcode}-{record.type}</div>
                         }}
                     />
-                </RefComboBox>
+                </RefComboBoxBaseUI>
                 <span style={{ color: 'red' }}>
                     {getFieldError('combobox')}
                 </span>

@@ -28,6 +28,7 @@ const propTypes = {
   storeData:PropTypes.array,
   onChangeFormControl: PropTypes.func,
   onFocusFormControl: PropTypes.func,
+  onSelect: PropTypes.func,
 };
 
 const defaultProps = {
@@ -43,7 +44,8 @@ const defaultProps = {
   comboboxStoreData:[],
   storeData:[],
   onChangeFormControl:()=>{},
-  onFocusFormControl:()=>{}
+  onFocusFormControl:()=>{},
+  onSelect:()=>{},
 };
 
 class RefComboBoxBaseUI extends Component {
@@ -147,7 +149,9 @@ class RefComboBoxBaseUI extends Component {
       popupVisible: false,
     }, () => {
       _this.handleChange(value);
-      if (onClickItemInner) {
+      if (onClickItemInner && record) {
+        onClickItemInner(record)
+      }else{
         onClickItemInner(value,displayValue,e)
       }
     });
