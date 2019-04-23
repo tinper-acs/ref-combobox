@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Pagination from 'bee-pagination';
-import { paginationLocale } from 'ref-core/lib/utils/locale.js'
+import { paginationLocale } from '../../utils/locale'
 const propTypes = {
   onSelect: PropTypes.func,
   pageCount: PropTypes.number,
