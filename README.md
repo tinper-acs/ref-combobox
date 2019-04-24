@@ -52,9 +52,9 @@ onClickItemInner | `function(record)`| -- | 下拉选中，返回缓存的数据
 sliderWidth|`number`或者`String`| 'auto'| 下拉菜单的宽度|否
 comboboxStoreData| `array` | [] | 下拉参照要展示dom集合，搭配<ComboItem>使用 | 否
 storeData| `array` | [] | 下拉参照数据集合，不传入storeData会导致onClickItemInner不能返回对应的完整数据 | 否
-onChangeFormControl| `function(value)` | 输入框输入值回调，value是输入内容 | 否
-onFocusFormControl| `function(popupVisible)` | 输入框focus回调，会将下拉参照的前一刻打开状态返回| 否
-onSelect| `function(currentIndex)` | 翻页回调，返回当前页面| 否
+onChangeFormControl| `function(value)` | - | 输入框输入值回调，value是输入内容 | 否
+onFocusFormControl| `function(popupVisible)` | -|  输入框focus回调，会将下拉参照的前一刻打开状态返回| 否
+onSelect| `function(currentIndex)` | - | 翻页回调，返回当前页面| 否
 pageCount | `number` | 1 | 总页数 | 否
 currPageIndex| `number` | 0 | 当前页码 | 否
 loading | `boolean` | false | 是否展示加载 | 否
