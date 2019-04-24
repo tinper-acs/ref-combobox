@@ -77,7 +77,7 @@ lang| `String`| 'zh_CN'| 分页多语 | 否
 参数 | 类型 |默认值| 说明 | 必选
 ---|---|--- | --- | ---
 active| `bool`| false | 该条数据是否是选中 | 否
-text| `String`| ''| 数据展示的形式 | 否
+text| `String`| ''| 该条展示数据 | 否
 value | `String`| ''| data-value,自定义属性 | 否
 
 
