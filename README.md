@@ -11,7 +11,7 @@ $ ynpm install ref-combobox --save
 
 引入
 
-import RefComboBoxBaseUI, {ComboStore,ComboItem} from 'ref-combobox/lib/index';
+import RefComboBoxBaseUI, {ComboStore,ComboItem} from 'ref-combobox';
 
 样式
 
@@ -27,11 +27,11 @@ import 'ref-combobox/lib/index.css';
 
 RefComboBoxBaseUI
     
-    带有输入框，下拉选择参照。默认
+    带有输入框，下拉选择参照。默认，需要配合使用下面两个
 
 ComboStore
     
-    可走缓存数据的下拉
+    可走缓存数据的下拉。
 
 ComboItem
     
