@@ -119,7 +119,7 @@ class Demo1 extends Component {
                 <RefComboBoxBaseUI
                     displayField={(record)=>{return `${record.refname}-haha`}}
                     valueField={'refcode'}
-                    lang={'zh_TW'}
+                    lang={'zh_CN'}
                     {...getFieldProps('combobox', {
                         initialValue:'{"refpk":"level1","refname":"初级"}',  //M0000000000002
                         rules: [{
