@@ -146,6 +146,7 @@ class RefComboBoxBaseUI extends Component {
       filterText: displayValue,
       filtering: false,
       value: value,
+      sliderSearchVal:value,
       popupVisible: false,
     }, () => {
       _this.handleChange(value);
@@ -217,10 +218,12 @@ class RefComboBoxBaseUI extends Component {
       this.props.onChangeFormControl('');
     });
   }
-  onPopupAlign = (value) =>{
+  onPopupAlign = (e,value) =>{
     this.setState({sliderSearchVal:this.state.value});
   }
-  onPopupVisibleChange = (value) => {
+  onPopupVisibleChange = () => {
+    let {onPopupVisibleChange = () =>{}} = this.props;
+    onPopupVisibleChange(this.state.popupVisible,this.state.sliderSearchVal)
     if (this.state.filtering && this.state.popupVisible) {
       //手动输入不算数
       this.setState({
@@ -327,8 +330,8 @@ class RefComboBoxBaseUI extends Component {
             </InputGroup.Button>
             {!!inputVal && <InputGroup.Button className="clearAll" shape="border" style={{
               cursor: 'pointer'
-            }} onClick={e=>this.clearAll(e)}>
-              <span className={!inputVal ? '' : "uf uf-close-c"} > </span>
+            }}>
+              <span className={!inputVal ? '' : "uf uf-close-c"} onClick={e=>this.clearAll(e)} > </span>
             </InputGroup.Button>
             }
           </InputGroup>
