@@ -86,6 +86,9 @@ class RefComboBoxBaseUI extends Component {
       let data = this.fixDataToMap(nextProps.storeData)
       this.afterLoad(data)
     }
+    if(this.props.value !== nextProps.value){
+      this.matchValues(nextProps);
+    }
   }
   matchValues = (props) => {
     let { value } = props;
@@ -93,8 +96,9 @@ class RefComboBoxBaseUI extends Component {
       let refValue = refValParse(value);
       this.setState({
         displayValue: refValue.refname,
+        value: refValue.refname,
+        sliderSearchVal: refValue.refname,
       });
-
     }
     return;
   }
