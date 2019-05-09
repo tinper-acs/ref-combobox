@@ -76,8 +76,8 @@ class RefComboBoxBaseUI extends Component {
       let refValue = refValParse(value);
       this.setState({
         displayValue: refValue.refname,
-        value: refValue.refname,
-        sliderSearchVal: refValue.refname,
+        value: refValue.refpk,
+        sliderSearchVal: refValue.refpk,
       });
     }
   }
@@ -96,8 +96,8 @@ class RefComboBoxBaseUI extends Component {
       let refValue = refValParse(value);
       this.setState({
         displayValue: refValue.refname,
-        value: refValue.refname,
-        sliderSearchVal: refValue.refname,
+        value:refValue.refpk,
+        sliderSearchVal: refValue.refpk,
       });
     }
     return;
