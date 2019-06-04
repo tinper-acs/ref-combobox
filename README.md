@@ -29,11 +29,11 @@ RefComboBoxBaseUI
     
     带有输入框，下拉选择参照。默认，需要配合使用下面两个
 
-ComboStore
+[Deprecated]ComboStore
     
     可走缓存数据的下拉。
 
-ComboItem
+[Deprecated]ComboItem
     
     下拉的单条数据
 
@@ -43,28 +43,28 @@ ComboItem
 
 参数 | 类型 |默认值| 说明 | 必选
 ---|---|--- | --- | ---
-className |`string`|空 | 参照class样式，作用于整个参照的样式，默认为空。 'ref-walsin-modal'特殊样式| 否
-theme| `String` | 'ref-red' | 启用参照默认样式 | 否
-style| `object`|{} | 参照style样式|否
-| dropdownStyle|object| - | 下拉菜单的样式|否
-| disabled |  boolean | false |是否禁用 |否 |
-| defaultOpen | boolean | -| 默认是否打开 | 否 |
-| dropdownClassName | string | - |下拉菜单的 className 属性 | 否 |
-| dropdownMatchSelectWidth |boolean | true | 下拉菜单和选择器同宽 | 否 |
-| dropdownStyle | object | - |下拉菜单的样式 | 否 |
-| notFoundContent |  String | '无匹配结果' |设定搜索不到数据显示的内容 |否 |
-| multiple |  boolean | false | 支持多选|否 |
-| placeholder |  string | - | 选择框默认文字 |否 |
-| searchPlaceholder | string | - |  搜索框默认文字 | 否 |
-| maxTagCount | number | - |否 最多显示的tag数 |  |
-| maxTagPlaceholder | ReactNode/function(omittedValues) | - | 隐藏 tag 时显示的内容 | 否 |
-| searchValue | string | - |搜索框值 | 否 |
+ className |`string`|空 | 参照class样式，作用于整个参照的样式，默认为空。 'ref-walsin-modal'特殊样式| 否
+ theme| `String` | 'ref-red' | 启用参照默认样式 | 否
+ style| `object`|{} | 参照style样式|否
+ dropdownStyle|object| - | 下拉菜单的样式|否
+ disabled |  boolean | false |是否禁用 |否 |
+ defaultOpen | boolean | -| 默认是否打开 | 否 |
+ dropdownClassName | string | - |下拉菜单的 className 属性 | 否 |
+dropdownMatchSelectWidth |boolean | true | 下拉菜单和选择器同宽 | 否 |
+dropdownStyle | object | - |下拉菜单的样式 | 否 |
+notFoundContent |  String | '无匹配结果' |设定搜索不到数据显示的内容 |否 |
+multiple |  boolean | false | 支持多选|否 |
+placeholder |  string | - | 选择框默认文字 |否 |
+searchPlaceholder | string | - |  搜索框默认文字 | 否 |
+maxTagCount | number | - |否 最多显示的tag数 |  |
+maxTagPlaceholder | ReactNode/function(omittedValues) | - | 隐藏 tag 时显示的内容 | 否 |
+searchValue | string | - |搜索框值 | 否 |
 pageCount | `number` | 10 | 总页数 | 否
 currPageIndex| `number` | 0 | 当前页码 | 否
 loading | `boolean` | -- | 是否展示加载 | 否
 totalElements | `number` | 0 | 总条数 | 否
 displayField |<code>string 或 function</code> | '{refname}' |下拉显示的内容的格式；<br/>当为字符串时则会根据`{}`包裹的增则匹配替换。<br/>如：`{refname}`<br/>当为函数时则需自定义返回内容，参数为storeData中的数据项。<br/>如：<br/>displayField: (record)=>  ${record.refname}-${record.refname}| 否 | 
-inputDisplay |<code>string 或 function</code>|'{refname}' |input中显示的内容的格式<br/>当为字符串时则会根据`{}`包裹的增则匹配替换。<br/>如：`{refname}`<br/>当为函数时则需自定义返回内容，参数有两种：1：来源于value或者defaultValue；2：下拉选中storeData的数据项 <br/>如：<br/>displayField: (record)=>  ${record.refname}-${record.refname}| 否 |
+inputDisplay |<code>string 或 function</code>|'{refname}' |input中显示的内容的格式<br/>当为字符串时则会根据`{}`包裹的增则匹配替换。<br/>如：`{refname}`<br/>当为函数时则需自定义返回内容，参数有两种：1：来源于value或者defaultValue；2：下拉选中storeData的数据项 <br/>如：<br/>displayField: (record)=>  ${record.refname}-${record.refname}。注意inputDisplay有字段限制| 否 |
 valueField |``string``|'refpk' |待提交的value的键。指定storeData数据项的键。要求具有唯一性| 否
 | defaultValue | string/string\[] | - | 指定默认选中的条目。格式同value |否 |
 value| `string/array`|-|指定当前选中的条目。可以是字符串格式或者数组格式。（一）字符串格式：其格式必须满足'{"refname":"","refpk":""}',refname是展示input框上的内容，格式自定义，多选以逗号隔开；refpk对应的是refname每项的键值，这个值要与valueField指定的值一样，此时使用inputDisplay注意，有字段限制。（二）数组格式：[{value:'',label:'',refname:''...}]，必须含有valueField指定的字段，展示按照inputField | string或者[] | - |
