@@ -85,6 +85,7 @@ class Demo1 extends Component {
                     pageCount={5}
                     currPageIndex={currentIndex}
                     searchValue={searchValue}
+                    onChange={(arr)=>{alert(JSON.stringify(arr))}}
 
                 >
                 </RefComboBoxBaseUI>

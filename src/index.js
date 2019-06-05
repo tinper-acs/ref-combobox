@@ -124,6 +124,7 @@ class RefComboBoxBaseUI extends Component {
     return (
       <div className={`${theme} ${className} ref-combobox`}>
         <Select
+        {...this.props}
          style={{
             ...style,
             width: style.width || 300
