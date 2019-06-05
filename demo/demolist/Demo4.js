@@ -1,14 +1,14 @@
 /**
  *
- * @title 基础示例1
- * @description 单选
+ * @title 基础示例4
+ * @description 清空功能，配合表单使用
  *
  */
 
 import React, { Component } from 'react';
 
 import Form from "bee-form";
-import RefComboBoxBaseUI, { ComboStore,ComboItem } from '../../src';
+import RefComboBoxBaseUI  from '../../src';
 import '../../src/index.less';
 import Button from 'bee-button';
 import 'bee-button/build/Button.css';
@@ -16,13 +16,13 @@ import Icon from 'bee-icon';
 import 'bee-icon/build/Icon.css';
 import request from '../../src/utils/request';
 
-class Demo1 extends Component {
+class Demo2 extends Component {
     constructor(props) {
         super(props);
         this.state = {
           loading:false,
           currPageIndex:1,
-          value :'{"refpk":"be400fd7-afeb-47de-978d-1c47be4a72c3","refname":"能有"}',  //M0000000000002
+          value :[{code:'001',name: "用友集团",refcode: "001"},{code: "dfs",name: "sdf",refcode: "dfs"}],  //M0000000000002
           storeData:[],
           searchValue:'',
         };
@@ -108,15 +108,24 @@ class Demo1 extends Component {
             this.loadData()
         })
     }
+    /**
+     * @msg: 清空
+     * @param {type} 
+     * @return: 
+     */
+    clearFunc = () =>{
+        this.props.form.setFieldsValue({combobox4:''})
+    }
     render() {
         const { getFieldError, getFieldProps } = this.props.form;
         let {searchValue,currPageIndex,storeData,loading} = this.state;
         return (
             <div className="demoPadding">
                 <RefComboBoxBaseUI
+                    multiple
                     displayField={(record)=>{return `${record.refname}-haha`}}
-                    inputDisplay={item=>{return `我们的:${item.refname}`}}
-                    valueField={'refpk'}
+                    inputDisplay={item=>{return `${item.name}`}}
+                    valueField={'code'}
                     lang={'zh_CN'}
                     loading={loading}
                     storeData={storeData}
@@ -127,7 +136,7 @@ class Demo1 extends Component {
                     currPageIndex={currPageIndex}
                     searchValue={searchValue}
                     onPopupVisibleChange={this.onPopupVisibleChange}
-                    {...getFieldProps('combobox', {
+                    {...getFieldProps('combobox4', {
                         initialValue:this.state.value,  //M0000000000002
                         rules: [{
                             message: '提示：请选择',
@@ -137,22 +146,13 @@ class Demo1 extends Component {
 
                 >
                 </RefComboBoxBaseUI>
-                
                 <Button
                     colors="primary"
-                    onClick={() => {
-                        this.props.form.validateFields((err, values) => {
-                            if (err) {
-                                alert("" + JSON.stringify(err));
-                                return false;
-                            }
-                            alert("" + JSON.stringify(values))
-                        });
-                    }}>
-                    提交
+                    onClick={this.clearFunc}>
+                    清空
             </Button>
             <span  className="error-tip" style={{ color: 'red' }}>
-                    {getFieldError('combobox')}
+                    {getFieldError('combobox4')}
                 </span>
             </div>
         )
@@ -160,4 +160,4 @@ class Demo1 extends Component {
 }
 
 
-export default Form.createForm()(Demo1);
+export default Form.createForm()(Demo2);
