@@ -246,6 +246,7 @@ class RefComboBoxBaseUI extends Component {
       onSelect,
       loading,
       totalElements=0,
+      disabled=false,
     } = this.props;
     let { showSlider, displayValue, children, useStore, slider,
       filtering, filterText
@@ -281,6 +282,35 @@ class RefComboBoxBaseUI extends Component {
             return item;
           })}
       </SliderPanel>
+    if(disabled){
+      return(
+        <div className={`${theme} ${className} ref-combobox`}
+        style={{
+          ...style,
+          width: style.width || 200
+        }}>
+          
+          <InputGroup simple style={{ width: '100%' }}>
+            <FormControl
+              type="text"
+              disabled={disabled}
+              style={{
+                width: '100%'
+              }}
+              {
+              ...displayValue.trim() ? { readOnly: "readonly" } : ''
+              }
+              value={inputVal}
+              onChange={this.onChangeFormControl}
+              onFocus={this.onFocusFormControl}
+            />
+            <InputGroup.Button shape="border">
+              <span className="uf uf-navmenu" > </span>
+            </InputGroup.Button>
+          </InputGroup>
+        </div>
+      )
+    }
     return (
       <div className={`${theme} ${className} ref-combobox`}
         style={{
