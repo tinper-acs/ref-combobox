@@ -247,6 +247,7 @@ class RefComboBoxBaseUI extends Component {
       loading,
       totalElements=0,
       disabled=false,
+      placeholder,
     } = this.props;
     let { showSlider, displayValue, children, useStore, slider,
       filtering, filterText
@@ -300,6 +301,7 @@ class RefComboBoxBaseUI extends Component {
               {
               ...displayValue.trim() ? { readOnly: "readonly" } : ''
               }
+              placeholder={placeholder}
               value={inputVal}
               onChange={this.onChangeFormControl}
               onFocus={this.onFocusFormControl}
@@ -344,6 +346,7 @@ class RefComboBoxBaseUI extends Component {
               {
               ...displayValue.trim() ? { readOnly: "readonly" } : ''
               }
+              placeholder={placeholder}
               value={inputVal}
               onChange={this.onChangeFormControl}
               onFocus={this.onFocusFormControl}
