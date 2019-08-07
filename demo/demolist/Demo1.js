@@ -138,6 +138,9 @@ class Demo1 extends Component {
                     pageCount={10}
                     currPageIndex={currentIndex}
                     totalElements={70}
+                    // menuIcon={<span className="uf uf-search"></span>}
+                    // disabled
+                    // paginationProps={{showJump:true,lang:'en_US'}}
                 >
                     <ComboStore
                        {...op}

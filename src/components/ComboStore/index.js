@@ -39,7 +39,9 @@ class ComboStore extends Component {
       currPageIndex = 0,
       totalElements,
       onSelect,
-      loading } = this.props;
+      loading,
+      paginationProps,
+    } = this.props;
     return (
       <div>
         <Loading container={this} show={loading} />
@@ -54,6 +56,7 @@ class ComboStore extends Component {
           totalElements={totalElements}
           lang={lang}
           onSelect={onSelect}
+          {...paginationProps}
         />
 
         {topPagination && comboboxStoreData.map((item) => {

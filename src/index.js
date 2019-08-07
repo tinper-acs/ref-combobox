@@ -248,6 +248,8 @@ class RefComboBoxBaseUI extends Component {
       totalElements=0,
       disabled=false,
       placeholder,
+      menuIcon = <span className="uf uf-navmenu" > </span>,
+      paginationProps={},
     } = this.props;
     let { showSlider, displayValue, children, useStore, slider,
       filtering, filterText
@@ -278,6 +280,7 @@ class RefComboBoxBaseUI extends Component {
               onSelect,
               loading,
               totalElements,
+              paginationProps,
             });
           }) : children.map((item) => {
             return item;
@@ -307,7 +310,7 @@ class RefComboBoxBaseUI extends Component {
               onFocus={this.onFocusFormControl}
             />
             <InputGroup.Button shape="border">
-              <span className="uf uf-navmenu" > </span>
+              {menuIcon}
             </InputGroup.Button>
           </InputGroup>
         </div>
@@ -352,7 +355,7 @@ class RefComboBoxBaseUI extends Component {
               onFocus={this.onFocusFormControl}
             />
             <InputGroup.Button shape="border">
-              <span className="uf uf-navmenu" > </span>
+               {menuIcon}
             </InputGroup.Button>
             {!!inputVal && <InputGroup.Button className="clearAll" shape="border" style={{
               cursor: 'pointer'

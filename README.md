@@ -60,6 +60,8 @@ currPageIndex| `number` | 0 | 当前页码 | 否
 loading | `boolean` | -- | 是否展示加载 | 否
 totalElements | `number` | 0 | 总条数 | 否
 theme| `String` | 'ref-red' | 参照主题 | 否
+menuIcon | `node|dom` | <span className="uf uf-navmenu" > </span> | 参照打开按钮，默认汉堡按钮 | 否
+paginationProps| `object` | 配置分页的设置，具体参考bee-pagination | 否
 
 ## ComboStore 增量 API
 
