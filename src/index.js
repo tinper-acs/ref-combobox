@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2019-08-09 14:31:57
  * @LastEditors: sueRimn
- * @LastEditTime: 2019-08-09 14:39:58
+ * @LastEditTime: 2019-08-09 16:02:43
  */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
@@ -259,19 +259,20 @@ class RefComboBoxBaseUI extends Component {
       placeholder,
       menuIcon = <span className="uf uf-navmenu" > </span>,
       paginationProps={},
-      popupPlacement='bottomRight'
+      popupPlacement='bottomLeft'
     } = this.props;
     let { showSlider, displayValue, children, useStore, slider,
       filtering, filterText
     } = this.state;
     let inputVal = filtering ? filterText.trim() : displayValue.trim();
+    let offsetX = Number(sliderWidth)?  (Number(sliderWidth)/2) + 'px' : 200;
     const builtinPlacements = {
       bottomLeft: {
         points: ['tl', 'tl'],
       },
       bottomRight:{
-        points: ['tr', 'tr'],
-        offset:[-400]
+        points: ['tl', 'tl'],
+        offset:[-offsetX],
       }
     };
     let innerTrigger =
