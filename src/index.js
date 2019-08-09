@@ -1,3 +1,11 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: sueRimn
+ * @Date: 2019-08-09 14:31:57
+ * @LastEditors: sueRimn
+ * @LastEditTime: 2019-08-09 14:39:58
+ */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { is, fromJS } from 'immutable';
@@ -209,6 +217,7 @@ class RefComboBoxBaseUI extends Component {
     },()=>{
       this.setState({popupVisible:true},()=>{
         this.props.onChangeFormControl('');
+        this.handleChange('')
       })
     });
   }
@@ -250,6 +259,7 @@ class RefComboBoxBaseUI extends Component {
       placeholder,
       menuIcon = <span className="uf uf-navmenu" > </span>,
       paginationProps={},
+      popupPlacement='bottomRight'
     } = this.props;
     let { showSlider, displayValue, children, useStore, slider,
       filtering, filterText
@@ -259,6 +269,10 @@ class RefComboBoxBaseUI extends Component {
       bottomLeft: {
         points: ['tl', 'tl'],
       },
+      bottomRight:{
+        points: ['tr', 'tr'],
+        offset:[-400]
+      }
     };
     let innerTrigger =
       <SliderPanel
@@ -323,7 +337,7 @@ class RefComboBoxBaseUI extends Component {
           width: style.width || 200
         }}>
         <Trigger
-          popupPlacement="bottomLeft"
+          popupPlacement={popupPlacement}
           action={['click']}
           popupAlign={{
             overflow: {

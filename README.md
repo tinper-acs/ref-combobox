@@ -1,3 +1,11 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: sueRimn
+ * @Date: 2019-08-09 14:00:02
+ * @LastEditors: sueRimn
+ * @LastEditTime: 2019-08-09 14:49:35
+ -->
 # 下拉参照 RefCombobox
 
 ## 何时使用
@@ -61,7 +69,8 @@ loading | `boolean` | -- | 是否展示加载 | 否
 totalElements | `number` | 0 | 总条数 | 否
 theme| `String` | 'ref-red' | 参照主题 | 否
 menuIcon | `node|dom` | <span className="uf uf-navmenu" > </span> | 参照打开按钮，默认汉堡按钮 | 否
-paginationProps| `object` | 配置分页的设置，具体参考bee-pagination | 否
+paginationProps| `object` |{}| 配置分页的设置，具体参考bee-pagination | 否
+popupPlacement | `String` | 'bottomLeft'或者'bottomRight' | 下拉面板与input左对齐或者右对齐，默认左对齐| 否
 
 ## ComboStore 增量 API
 
