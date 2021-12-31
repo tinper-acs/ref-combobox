@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import Pagination from 'bee-pagination';
+import { Pagination } from '@tinper/next-ui';
 import { paginationLocale } from '../../utils/locale'
 const propTypes = {
   onSelect: PropTypes.func,
@@ -43,9 +43,9 @@ class PaginationWrap extends PureComponent {
           className={pageCount > 0 ? '' : `  ref-multiple-table-pagination-hide`}
           items={pageCount}
           total={totalElements}
-          activePage={currPageIndex}
-          onSelect={onSelect}
-          locale={paginationLocale(lang)}
+          current={currPageIndex}
+          onChange={onSelect}
+          locale={lang.toLocaleLowerCase()}
           maxButtons={3}
         />
       </div>

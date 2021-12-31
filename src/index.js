@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { is, fromJS } from 'immutable';
-import Select from 'menu-selector';
-import SliderPanel, { ComboItem } from './components/SliderPanel';
-import ComboStore from './components/ComboStore';
+// import { is, fromJS } from 'immutable';
+import Select from 'menu-selector-tinper-next';
+// import SliderPanel, { ComboItem } from './components/SliderPanel';
+// import ComboStore from './components/ComboStore';
 import './utils/polyfill';
 
 const propTypes = {
@@ -177,8 +177,8 @@ class RefComboBoxBaseUI extends Component {
 RefComboBoxBaseUI.propTypes = propTypes;
 RefComboBoxBaseUI.defaultProps = defaultProps;
 export default RefComboBoxBaseUI;
-export {
-  ComboStore,
-  ComboItem,
-  SliderPanel
-}
+// export {
+//   ComboStore,
+//   ComboItem,
+//   SliderPanel
+// }

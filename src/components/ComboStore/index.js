@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Loading from 'bee-loading';
+import { Spin } from "@tinper/next-ui";
 import Pagination from '../Pagination';
 
 
@@ -42,7 +42,7 @@ class ComboStore extends Component {
       loading } = this.props;
     return (
       <div>
-        <Loading container={this} show={loading} />
+        <Spin getPopupContainer={this} spinning={loading} />
 
         {!topPagination && comboboxStoreData.map((item, i) => {
           return <div key={`combox-store-${i}`}>{item}</div>
